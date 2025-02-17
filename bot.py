@@ -74,8 +74,6 @@ def main():
                 app.start(),  # Start the Pyrogram Client
                 bot_instance.start(),  # Start the bot instance
             )
-        else:
-            await asyncio.gather(bot_instance.start())
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(start_services())
