@@ -159,7 +159,7 @@ async def auto_rename_files(client, message):
         media_type = media_preference or "document"
     elif message.video:
         file_id = message.video.file_id
-        file_name = f"{message.video.file_name}.mp4"
+        file_name = f"{message.video.file_name}.mkv"
         media_type = media_preference or "video"
     elif message.audio:
         file_id = message.audio.file_id
@@ -282,6 +282,7 @@ async def auto_rename_files(client, message):
                     thumb=ph_path,
                     caption=caption,
                     progress=progress_for_pyrogram,
+
                     progress_args=("Upload Started...", upload_msg, time.time()),
                 )
             elif media_type == "video":
@@ -291,6 +292,8 @@ async def auto_rename_files(client, message):
                     caption=caption,
                     thumb=ph_path,
                     duration=0,
+                    width = 1280,
+                    height = 720,
                     progress=progress_for_pyrogram,
                     progress_args=("Upload Started...", upload_msg, time.time()),
                 )
