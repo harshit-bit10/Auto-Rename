@@ -71,7 +71,7 @@ bot_instance = Bot()
 def main():
     async def start_services():
             await asyncio.gather(
-                app.start(),  # Start the Pyrogram Client
+                bot.start(),  # Start the Pyrogram Client
                 bot_instance.start(),  # Start the bot instance
             )
 
